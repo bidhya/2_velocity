@@ -2,3 +2,8 @@
 jobs/*
 # But do not ignore the jobs/ folder itself
 !jobs/
+
+# Ignore all contents inside Archive/
+Archive/*
+# But do not ignore the Archive/ folder itself
+!Archive/
