@@ -7,3 +7,6 @@ jobs/*
 Archive/*
 # But do not ignore the Archive/ folder itself
 !Archive/
+
+# Ignore Copilot instructions file
+.github/copilot-instructions.md

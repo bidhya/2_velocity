@@ -119,8 +119,8 @@ end
 
 fid = fopen(jobfilepath,'w');
 
-str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=140:00:00\n#SBATCH -N 1 -n 20\n#SBATCH --mem=20G\n#SBATCH --job-name="SDM_%d_100"\n#SBATCH --mail-user=noh.56@osu.edu\n#SBATCH -p howat\n\nmodule load intel/2024.2.0\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n',ID_roi);
-%str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=48:00:00\n#SBATCH -N 1 -n 10\n#SBATCH --mem=10G\n#SBATCH --job-name="MJ_SDM"\n#SBATCH --mail-user=noh.56@osu.edu\n\nmodule load intel/19.0.5\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n');
+str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=140:00:00\n#SBATCH -N 1 -n 20\n#SBATCH --mem=20G\n#SBATCH --job-name="SDM_%d_100"\n#SBATCH --mail-user=yadav.111@osu.edu\n#SBATCH -p howat\n\nmodule load intel/2024.2.0\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n',ID_roi);
+%str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=48:00:00\n#SBATCH -N 1 -n 10\n#SBATCH --mem=10G\n#SBATCH --job-name="MJ_SDM"\n#SBATCH --mail-user=yadav.111@osu.edu\n\nmodule load intel/19.0.5\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n');
 fprintf(fid,str);
 
 path_subset=[path_subset_root,'/',string_regionname.name]
