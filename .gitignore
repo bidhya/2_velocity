@@ -1,0 +1,4 @@
+# Ignore all contents inside jobs/
+jobs/*
+# But do not ignore the jobs/ folder itself
+!jobs/
