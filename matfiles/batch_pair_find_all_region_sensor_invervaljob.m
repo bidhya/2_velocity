@@ -15,6 +15,11 @@ if sensor == 2
     outpath = '/home/yadav.111/Github/2_velocity/jobs/sentinel2';
 end
 
+% Ensure the output directory exists
+if ~exist(outpath, 'dir')
+    mkdir(outpath);
+end
+
 datestart = sprintf('%d %d 1',varargin{3},startmon);
 dateend = sprintf('%d %d 31',varargin{3},endmon);
 

@@ -116,6 +116,12 @@ else
     jobfilepath = sprintf('/home/yadav.111/Github/2_velocity/jobs/sentinel2/%s_job_%d_%d_%d.sh',string_regionname.name,year,monthrange(1),monthrange(2));
 end
 
+% Ensure the job directory exists
+jobdir = fileparts(jobfilepath);
+if ~exist(jobdir, 'dir')
+    mkdir(jobdir);
+end
+
 fid = fopen(jobfilepath,'w');
 
 if sensor == 1
