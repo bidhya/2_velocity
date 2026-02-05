@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Simplified function call handling
   - Enhanced argument parsing and error handling
   - Updated usage examples and documentation
+- Added automatic directory creation in `batch_pair_find_all_region_sensor_invervaljob.m` to prevent file write errors when output paths don't exist
 
 ### Fixed
 - Various fixes in bash script for calling MATLAB on HPC
