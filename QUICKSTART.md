@@ -11,15 +11,77 @@ cd 2_velocity
 
 ## 2. Project Structure
 - `matfiles/` — MATLAB scripts for batch processing and analysis
-- `jobs/` — slrum jobs created by matlab files live here (contents ignored by git)
+- `jobs/` — SLURM job scripts created by MATLAB files live here (contents ignored by git).
 
-## 3. Steps to run
-One time setup  
-1. Create jobs/Landsat and jobs/sentinel2 folders
-2. Open matlab in terminal
-3. batch_pair_find_all_region_sensor_invervaljob.m
-    batch_pair_find_all_region_sensor_invervaljob(20, 25, 2025, 1, 12)
+## 3. Workflow Overview
+The project involves generating Surface Displacement Maps (SDMs) at two resolutions: 300m (preprocessing) and 100m (final output). The following steps outline the script execution order:
 
-## 4. Run MATLAB Scripts
-Open MATLAB and run scripts from the `matfiles/` directory for batch processing and velocity map analysis.
+### **Preprocessing at 300m Grid**
+1. **Generate 300m SDM job files**:
+   - Script: `batch_pair_find_all_region_sensor_invervaljob.m`
+   - `sensor_type`: 1 = Landsat, 2 = Sentinel-2
+   - Example:
+     ```matlab
+     batch_pair_find_all_region_sensor_invervaljob(region_start, region_end, year, sensor_type, start_month, end_month)
+     batch_pair_find_all_region_sensor_invervaljob(1, 50, 2025, 1, 1, 12)
+     ```
+
+2. **Submit the 300m job files**:
+   - Script: `job_submit_sbatch.m`
+   - Example:
+     ```matlab
+     job_submit_sbatch(region_start, region_end, year, sensor_type)
+     job_submit_sbatch(1, 50, 2025, 1)
+     ```
+
+3. **Find good-quality 300m SDMs**:
+   - Script: `find_good_vmap_from_insar_all_sensor.m`
+   - Example:
+     ```matlab
+     find_good_vmap_from_insar_all_sensor(region_start, region_end, year, sensor_type)
+     find_good_vmap_from_insar_all_sensor(1, 50, 2025, 1)
+     ```
+
+4. **Repeat steps 1–3 until no pairs remain**.
+
+### **Processing at 100m Grid**
+1. **Generate 100m SDM job files**:
+   - Script: `batch_pair_find_all_region_sensor_100.m`
+   - `sensor_type`: 1 = Landsat, 2 = Sentinel-2
+   - Example:
+     ```matlab
+     batch_pair_find_all_region_sensor_100(region_start, region_end, year, sensor_type, start_month, end_month)
+     batch_pair_find_all_region_sensor_100(1, 50, 2025, 1, 1, 12)
+     ```
+
+2. **Submit the 100m job files**:
+   - Script: `job_submit_sbatch_100m.m`
+   - Example:
+     ```matlab
+     job_submit_sbatch_100m(region_start, region_end, year, sensor_type)
+     job_submit_sbatch_100m(1, 50, 2025, 1)
+     ```
+
+3. **Find good-quality 100m SDMs**:
+   - Script: `find_good_vmap_from_insar_all_sensor_100m.m`
+   - Example:
+     ```matlab
+     find_good_vmap_from_insar_all_sensor_100m(region_start, region_end, year, sensor_type)
+     find_good_vmap_from_insar_all_sensor_100m(1, 50, 2025, 1)
+     ```
+
+## 4. One-Time Setup
+1. Create the following directories:
+   - `jobs/Landsat`
+   - `jobs/sentinel2`
+2. Open MATLAB in the terminal.
+3. Run the first script to generate 300m job files:
+   ```matlab
+   batch_pair_find_all_region_sensor_invervaljob(20, 25, 2025, 1, 12)
+   ```
+
+## 5. Notes
+- Ensure SLURM is configured correctly for job submission.
+- Refer to the `README.md` file for detailed SDM software usage and additional setup instructions.
+- If any required files or scripts are missing, flag them for review and update the workflow accordingly.
 
