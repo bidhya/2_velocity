@@ -95,6 +95,7 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 
 ## 5. Key Files and Configuration
 - **`matfiles/batch_pair_find_SDM_sensor_intervaljob.m`**: This is a critical file that defines the paths to input data (e.g., subset directories for Landsat/Sentinel images) and output results (e.g., SDM result directories). These paths are hardcoded and must be carefully updated for new runs to ensure the scripts access the correct data locations on the HPC filesystem.
+- **`matfiles/batch_pair_find_all_region_sensor_invervaljob.m`**: This file sets the local paths for SLURM job scripts and output logs. These paths may need updating for new runs or different users.
 
 ## 6. Notes
 - Ensure SLURM is configured correctly for job submission.
