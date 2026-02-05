@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bash script for running MATLAB functions (`run_matlab_script.sh`)
 - Architecture diagram (`docs/ARCHITECTURE.md`) visualizing the 300m and 100m workflows
 - Note in QUICKSTART.md highlighting `batch_pair_find_SDM_sensor_intervaljob.m` as a key file for path configuration
+- Expanded workflow documentation in QUICKSTART.md to specify script dependencies and internal calls
 
 ### Changed
 - Improved `run_matlab_script.sh` for better MATLAB execution and HPC compatibility

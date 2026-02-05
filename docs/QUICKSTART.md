@@ -40,7 +40,7 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 
 ### **Preprocessing at 300m Grid**
 1. **Generate 300m SDM job files**:
-   - Script: `batch_pair_find_all_region_sensor_invervaljob.m`
+   - Script: `batch_pair_find_all_region_sensor_invervaljob.m` (calls `batch_pair_find_SDM_sensor_intervaljob.m` for each region to set paths and generate SLURM scripts)
    - `sensor_type`: 1 = Landsat, 2 = Sentinel-2
    - Example:
      ```matlab
@@ -69,7 +69,7 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 
 ### **Processing at 100m Grid**
 1. **Generate 100m SDM job files**:
-   - Script: `batch_pair_find_all_region_sensor_100.m`
+   - Script: `batch_pair_find_all_region_sensor_100.m` (calls `batch_pair_find_SDM_goodlist_sensor_100.m` for each region to set paths and generate SLURM scripts)
    - `sensor_type`: 1 = Landsat, 2 = Sentinel-2
    - Example:
      ```matlab
