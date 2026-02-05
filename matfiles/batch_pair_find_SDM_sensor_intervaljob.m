@@ -119,10 +119,10 @@ end
 fid = fopen(jobfilepath,'w');
 
 if sensor == 1
-        str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=140:00:00\n#SBATCH -N 1 -n 24\n#SBATCH --mem=20G\n#SBATCH --job-name="SDM_%d"\n#SBATCH --mail-user=yadav.111@osu.edu\n#SBATCH -p howat\n#SBATCH --output=%s_%d_%d_%d_landsat.log\n\nmodule load intel/2024.2.0\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n',ID_roi,string_regionname.name,year,monthrange(1),monthrange(2));
+        str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=140:00:00\n#SBATCH -N 1 -n 24\n#SBATCH --mem=20G\n#SBATCH --job-name="SDM_%d"\n#SBATCH --mail-user=yadav.111@osu.edu\n#SBATCH -p batch\n#SBATCH --output=%s_%d_%d_%d_landsat.log\n\nmodule load intel/2024.2.0\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n',ID_roi,string_regionname.name,year,monthrange(1),monthrange(2));
         fprintf(fid,str);
 else
-        str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=140:00:00\n#SBATCH -N 1 -n 24\n#SBATCH --mem=20G\n#SBATCH --job-name="SDM_%d"\n#SBATCH --mail-user=yadav.111@osu.edu\n#SBATCH -p howat\n#SBATCH --output=%s_%d_%d_%d_sentinel.log\n\nmodule load intel/2024.2.0\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n',ID_roi,string_regionname.name,year,monthrange(1),monthrange(2));
+        str = sprintf('#!/usr/bin/env bash\n#SBATCH --time=140:00:00\n#SBATCH -N 1 -n 24\n#SBATCH --mem=20G\n#SBATCH --job-name="SDM_%d"\n#SBATCH --mail-user=yadav.111@osu.edu\n#SBATCH -p batch\n#SBATCH --output=%s_%d_%d_%d_sentinel.log\n\nmodule load intel/2024.2.0\nexport COMPILER=intel\ncd /fs/project/howat.4/SETSM\n',ID_roi,string_regionname.name,year,monthrange(1),monthrange(2));
         fprintf(fid,str);
 end
 
