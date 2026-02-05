@@ -111,9 +111,9 @@ end
 %check_list_file = 0;
 %generate SDM job file *.sh
 if sensor == 1
-    jobfilepath = sprintf('/home/yadav.111/Github/2_Velocity/jobs/Landsat/%s_job_%d_%d_%d.sh',string_regionname.name,year,monthrange(1),monthrange(2));
+    jobfilepath = sprintf('/home/yadav.111/Github/2_velocity/jobs/Landsat/%s_job_%d_%d_%d.sh',string_regionname.name,year,monthrange(1),monthrange(2));
 else
-    jobfilepath = sprintf('/home/yadav.111/Github/2_Velocity/jobs/sentinel2/%s_job_%d_%d_%d.sh',string_regionname.name,year,monthrange(1),monthrange(2));
+    jobfilepath = sprintf('/home/yadav.111/Github/2_velocity/jobs/sentinel2/%s_job_%d_%d_%d.sh',string_regionname.name,year,monthrange(1),monthrange(2));
 end
 
 fid = fopen(jobfilepath,'w');

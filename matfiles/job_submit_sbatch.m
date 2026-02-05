@@ -2,7 +2,7 @@ function find_good_vmap_from_insar_all(varargin)
 
 sensor = 1;
 path = '/fs/project/howat.4-3/howat-data/VelocityResults/Greenland/im2_mimc_hc_ortho';
-job_path = '/home/yadav.111/Github/2_Velocity/jobs/Landsat';
+job_path = '/home/yadav.111/Github/2_velocity/jobs/Landsat';
 
 if nargin > 3
     sensor = varargin{4};
@@ -10,7 +10,7 @@ end
 
 if sensor == 2
     path = '/fs/project/howat.4/sentinel2/clipped2';
-    job_path = '/home/yadav.111/Github/2_Velocity/jobs/sentinel2';
+    job_path = '/home/yadav.111/Github/2_velocity/jobs/sentinel2';
 end
 
 start_id = varargin{1};

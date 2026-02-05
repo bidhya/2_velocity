@@ -1,7 +1,7 @@
 function batch_pair_find_all_region(varargin)
 
 %outpath = '/home/noh.56/development/SDM_utility/Landsat';
-outpath = '/home/yadav.111/Github/2_Velocity/jobs/Landsat';
+outpath = '/home/yadav.111/Github/2_velocity/jobs/Landsat';
 startmon = 1;
 endmon = 12;
 sensor = 1; % Landsat = 1, Sentinel = 2
@@ -12,7 +12,7 @@ if nargin > 3
 end
 
 if sensor == 2
-    outpath = '/home/yadav.111/Github/2_Velocity/jobs/sentinel2';
+    outpath = '/home/yadav.111/Github/2_velocity/jobs/sentinel2';
 end
 
 datestart = sprintf('%d %d 1',varargin{3},startmon);
