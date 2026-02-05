@@ -93,7 +93,10 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
      find_good_vmap_from_insar_all_sensor_100m(1, 50, 2025, 1)
      ```
 
-## 5. Notes
+## 5. Key Files and Configuration
+- **`matfiles/batch_pair_find_SDM_sensor_intervaljob.m`**: This is a critical file that defines the paths to input data (e.g., subset directories for Landsat/Sentinel images) and output results (e.g., SDM result directories). These paths are hardcoded and must be carefully updated for new runs to ensure the scripts access the correct data locations on the HPC filesystem.
+
+## 6. Notes
 - Ensure SLURM is configured correctly for job submission.
 - Refer to the `README.md` file for detailed SDM software usage and additional setup instructions.
 - If any required files or scripts are missing, flag them for review and update the workflow accordingly.
