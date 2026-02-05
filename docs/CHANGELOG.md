@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - HPC job submission scripts for SLURM
 - Documentation in `docs/` folder (QUICKSTART.md, TROUBLESHOOTING.md)
 - Bash script for running MATLAB functions (`run_matlab_script.sh`)
-- Architecture diagram (`docs/architecture.md`) visualizing the 300m and 100m workflows
+- Architecture diagram (`docs/ARCHITECTURE.md`) visualizing the 300m and 100m workflows
 
 ### Changed
 - Improved `run_matlab_script.sh` for better MATLAB execution and HPC compatibility
