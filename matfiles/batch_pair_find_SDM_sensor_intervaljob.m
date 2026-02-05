@@ -13,7 +13,7 @@ if sensor == 1 %Landsat
     param.path.subset='/fs/project/howat.4-3/greenland_glacier_flow/1_download_merge_and_clip/landsat';
     
     %SDM output path
-    param.path.result='/fs/project/howat.4/yadav.111/greenland_glacier_flow/landsat_sdm';
+    param.path.result='/fs/project/howat.4/yadav.111/greenland_glacier_flow/2_velocity/landsat_sdm';
     
     %Reference insar path
     param.path.insar='/fs/project/howat.4-3/howat-data/VelocityResults/Greenland/SETSM_SDM/landsat';
@@ -28,7 +28,7 @@ else %Sentinel
     param.path.subset='/fs/project/howat.4-3/greenland_glacier_flow/1_download_merge_and_clip/sentinel2';
     
     %SDM ouput path
-    param.path.result='/fs/project/howat.4/yadav.111/greenland_glacier_flow/sentinel2_sdm';
+    param.path.result='/fs/project/howat.4/yadav.111/greenland_glacier_flow/2_velocity/sentinel2_sdm';
     
     %Reference insar path
     param.path.insar='/fs/project/howat.4-3/howat-data/VelocityResults/Greenland/SETSM_SDM/landsat';
