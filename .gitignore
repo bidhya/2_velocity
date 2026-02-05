@@ -10,3 +10,6 @@ Archive/*
 
 # Ignore Copilot instructions file
 .github/copilot-instructions.md
+
+# Ignore all log files
+*.log
