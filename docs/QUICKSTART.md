@@ -42,7 +42,11 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 1. **Generate 300m SDM job files**:
    - Script: `batch_pair_find_all_region_sensor_invervaljob.m` (calls `batch_pair_find_SDM_sensor_intervaljob.m` for each region to set paths and generate SLURM scripts)
    - `sensor_type`: 1 = Landsat, 2 = Sentinel-2
-   - Example:
+   - **Bash Command**:
+     ```bash
+     ./run_matlab_script.sh matfiles/batch_pair_find_all_region_sensor_invervaljob 1 5 2025 1 1 12
+     ```
+   - **MATLAB equivalent**:
      ```matlab
      cd matfiles
      batch_pair_find_all_region_sensor_invervaljob(region_start, region_end, year, sensor_type, start_month, end_month)
@@ -51,7 +55,11 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 
 2. **Submit the 300m job files**:
    - Script: `job_submit_sbatch.m`
-   - Example:
+   - **Bash Command**:
+     ```bash
+     ./run_matlab_script.sh matfiles/job_submit_sbatch 1 50 2025 1
+     ```
+   - **MATLAB equivalent**:
      ```matlab
      job_submit_sbatch(region_start, region_end, year, sensor_type)
      job_submit_sbatch(1, 50, 2025, 1)
@@ -59,7 +67,11 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 
 3. **Find good-quality 300m SDMs**:
    - Script: `find_good_vmap_from_insar_all_sensor.m`
-   - Example:
+   - **Bash Command**:
+     ```bash
+     ./run_matlab_script.sh matfiles/find_good_vmap_from_insar_all_sensor 1 50 2025 1
+     ```
+   - **MATLAB equivalent**:
      ```matlab
      find_good_vmap_from_insar_all_sensor(region_start, region_end, year, sensor_type)
      find_good_vmap_from_insar_all_sensor(1, 50, 2025, 1)
@@ -71,7 +83,11 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 1. **Generate 100m SDM job files**:
    - Script: `batch_pair_find_all_region_sensor_100.m` (calls `batch_pair_find_SDM_goodlist_sensor_100.m` for each region to set paths and generate SLURM scripts)
    - `sensor_type`: 1 = Landsat, 2 = Sentinel-2
-   - Example:
+   - **Bash Command**:
+     ```bash
+     ./run_matlab_script.sh matfiles/batch_pair_find_all_region_sensor_100 1 50 2025 1 1 12
+     ```
+   - **MATLAB equivalent**:
      ```matlab
      batch_pair_find_all_region_sensor_100(region_start, region_end, year, sensor_type, start_month, end_month)
      batch_pair_find_all_region_sensor_100(1, 50, 2025, 1, 1, 12)
@@ -79,7 +95,11 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 
 2. **Submit the 100m job files**:
    - Script: `job_submit_sbatch_100m.m`
-   - Example:
+   - **Bash Command**:
+     ```bash
+     ./run_matlab_script.sh matfiles/job_submit_sbatch_100m 1 50 2025 1
+     ```
+   - **MATLAB equivalent**:
      ```matlab
      job_submit_sbatch_100m(region_start, region_end, year, sensor_type)
      job_submit_sbatch_100m(1, 50, 2025, 1)
@@ -87,7 +107,11 @@ The project involves generating Surface Displacement Maps (SDMs) at two resoluti
 
 3. **Find good-quality 100m SDMs**:
    - Script: `find_good_vmap_from_insar_all_sensor_100m.m`
-   - Example:
+   - **Bash Command**:
+     ```bash
+     ./run_matlab_script.sh matfiles/find_good_vmap_from_insar_all_sensor_100m 1 50 2025 1
+     ```
+   - **MATLAB equivalent**:
      ```matlab
      find_good_vmap_from_insar_all_sensor_100m(region_start, region_end, year, sensor_type)
      find_good_vmap_from_insar_all_sensor_100m(1, 50, 2025, 1)
