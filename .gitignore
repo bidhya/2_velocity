@@ -13,3 +13,5 @@ Archive/*
 
 # Ignore all log files
 *.log
+
+docs/SCRATCHPAD.md
