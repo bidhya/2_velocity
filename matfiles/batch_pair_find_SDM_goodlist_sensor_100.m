@@ -305,7 +305,7 @@ function flag=isLandsat(name_i0)
 end
 
 function flag=isSentinel(name_i0)
-    if ~isempty(strfind(name_i0,'S2A')) || ~isempty(strfind(name_i0,'S2B'))
+    if ~isempty(strfind(name_i0,'S2A')) || ~isempty(strfind(name_i0,'S2B')) || ~isempty(strfind(name_i0,'S2C'))
         flag=true;
     else
         flag=false;
